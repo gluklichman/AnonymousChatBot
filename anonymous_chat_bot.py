@@ -1,7 +1,11 @@
 import telebot
+import sys
 
 print("Configuring bot...")
-bot = telebot.TeleBot("", parse_mode=None)
+with open ("token", "r") as tokenfile:
+    token = tokenfile.read().replace('\n', '')
+
+bot = telebot.TeleBot(token, parse_mode=None)
 print("Configuring bot complete")
 
 #message hanlers
